@@ -1,0 +1,123 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<!-- ============================================================================= -->
+	<!-- General Information -->
+	<!-- ============================================================================= -->
+	<modelVersion>4.0.0</modelVersion>
+
+	<artifactId>g-common</artifactId>
+	<version>1.1.6</version>
+	<packaging>jar</packaging>
+
+	<name>g-common</name>
+	<description>G-Common is the group of common classes to manage bored and usefull opeartions.</description>
+	<url>http://g-ee.sourceforge.net</url>
+
+	<!-- ============================================================================= -->
+	<!-- Parent POM Information -->
+	<!-- ============================================================================= -->
+	<parent>
+		<groupId>net.sf.gee</groupId>
+		<artifactId>g-parent</artifactId>
+		<version>0.1.20</version>
+	</parent>
+
+	<!-- ============================================================================= -->
+	<!-- License -->
+	<!-- ============================================================================= -->
+	<licenses>
+		<license>
+			<name>The Apache License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+		</license>
+	</licenses>
+
+	<!-- ============================================================================= -->
+	<!-- Developers -->
+	<!-- ============================================================================= -->
+	<developers>
+		<developer>
+			<name>Giorgio Desideri</name>
+			<email>Giorgio Desideri</email>
+			<organization>Owner</organization>
+			<organizationUrl>http://g-ee.sourceforge.net</organizationUrl>
+		</developer>
+	</developers>
+
+	<!-- ============================================================================= -->
+	<!-- Software Content Management -->
+	<!-- ============================================================================= -->
+	<scm>
+		<connection>scm:hg:https://github.com/kallsu/g-common</connection>
+		<developerConnection>scm:hg:https://github.com/kallsu/g-common</developerConnection>
+		<url>http://github.com/kallsu/g-common</url>
+	</scm>
+
+	<!-- ============================================================================= -->
+	<!-- Properties Information -->
+	<!-- ============================================================================= -->
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+		<commons-codec.version>1.10</commons-codec.version>
+		<commons-beanutils.version>1.9.2</commons-beanutils.version>
+		<commons-lang.version>3.3.2</commons-lang.version>
+	</properties>
+
+	<!-- ============================================================================= -->
+	<!-- Dependencis Information -->
+	<!-- ============================================================================= -->
+	<dependencies>
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+			<version>${commons-codec.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-beanutils</groupId>
+			<artifactId>commons-beanutils</artifactId>
+			<version>${commons-beanutils.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>${commons-lang.version}</version>
+		</dependency>
+	</dependencies>
+
+
+	<!-- ============================================================================= -->
+	<!-- Build Information -->
+	<!-- ============================================================================= -->
+	<build>
+		<finalName>${project.artifactId}-${project.version}</finalName>
+
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-gpg-plugin</artifactId>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<configuration>
+					<additionalparam>-Xdoclint:none</additionalparam>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
